@@ -1,0 +1,111 @@
+.catalogo{
+    margin: 130px 10% 10% 10%
+}
+#tituloCat{
+
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(86, 74, 56)
+
+}
+#lista{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listTile
+{
+    display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: rgba(169, 162, 153, 0.7);
+    border-radius: 10px;
+}
+.tileTitulo{
+    font-size: 20px;
+    font-weight: bold;
+}
+.listTile img{
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+.listTile .infos{
+    margin: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+
+/*/////////////////////////////////////////////////////////////////////*/
+.planta{
+    margin: 100px 10% 10% 10%
+}
+
+.planta a{
+    color: rgb(106, 96, 84);
+    text-decoration: none;
+    
+}
+
+#tudo
+{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#infoPlantas
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+    background-color: rgba(169, 162, 153, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    flex-wrap: nowrap;
+
+}
+
+.planta img{
+    width:300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+.planta #descricao{
+    font-size: 20px;
+}
+
+.planta #infos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+#tituloDoencas{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: none;
+}
+
+#nome, #sintomas, #agente{
+    margin-bottom: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+@media (max-width: 800px)
+{
+    #tudo{
+        flex-wrap: wrap;
+    }
+}

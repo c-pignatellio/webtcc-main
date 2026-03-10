@@ -1,0 +1,168 @@
+/*--------------CONTATO----------------------------------------------------------------------*/
+
+.contato{
+    margin: 10% 15% 0% 20%;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100vh;
+    
+}
+.contato strong{
+    font-size: 50px;
+    color: rgb(57, 50, 43);
+
+}
+.contato p
+{
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.contato h3{
+    font-size: 20px;
+    font-weight:normal;
+}
+
+.formulario
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.formulario input{
+    width: 150%;
+}
+
+#msg input
+{
+    height: 90px;
+    padding: 15px;
+    width: 150%;
+}
+
+#msg input::placeholder
+{
+    position: absolute;
+    top: 13px;
+}
+
+#enviar
+{
+    width: 250px;
+    background-color: rgba(77, 113, 76, 1);
+    margin-top: 25px;
+    color: white;
+    font-size: 17px;
+    padding: 0px;
+}
+
+#enviar:active
+{
+    background-color: rgb(65, 95, 64);
+}
+
+
+.formas
+{
+    display: flex;
+    
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 40px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 806px;
+}
+
+.contato .span h2
+{
+    font-size: 25px;
+    color:black;
+    
+}
+
+.contato .span h4
+{
+    font-size: 18px;
+    margin: 5px 0px 20px 30px;
+    font-weight: normal;
+}
+
+@media (max-width: 1240px) {
+    .contato{
+        margin: 10% 15% 0% 15%;
+        width: 70%;
+
+    }
+}
+
+@media (max-width: 1040px) {
+    .contato{
+        margin: 15% 10% 0% 10%;
+        width: 80%;
+
+    }
+}
+
+@media (max-width: 796px) {
+    .contato{
+        margin-bottom: 150px;
+    }
+
+    .formas{
+        justify-content: center;
+    }
+
+    .span div{
+        display: flex;
+        flex-direction: row;
+
+    }
+}
+
+@media (max-width: 550px) {
+    .contato .span h2{
+        font-size: 20px;
+        color:black;
+        
+    }
+
+    .contato .span h4{
+        font-size: 15px;
+        margin: 5px 0px 20px 20px;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 450px) {
+    .span div{
+        flex-direction: column;
+    }
+
+    .contato{
+        margin-bottom: 300px;
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 428px) {
+    .contato{
+        margin-bottom: 350px;
+    }
+}
+
+@media (max-width: 347px) {
+    .contato{
+        margin-bottom: 375px;
+    }
+}
+
+@media (max-width: 336px) {
+    .contato{
+        margin-bottom: 400px;
+    }
+}

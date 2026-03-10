@@ -1,0 +1,62 @@
+/*----------ESQUECEU SUA SENHA ------------------------------*/
+.esqueceu
+{
+    margin: 150px 10% 0% 10%;
+}
+
+.esqueceu strong
+{
+    font-size: 45px;
+    color: rgb(61, 44, 26);
+}
+
+.esqueceu p
+{
+    font-size: 22px;
+    line-height: 2em;
+}
+
+.esqueceu form
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.esqueceu input[type="submit"]
+{
+    width: 130px;
+    background-color: #628067;
+    color: white;
+    padding: 10px;
+
+}
+
+.botao{
+    background:none;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    height:30px;
+    width: 30px;
+    position: relative; 
+    top: 7px
+
+}
+
+.botao:hover
+{
+    background-color: rgba(81, 81, 81, 0.246);
+}
+
+.olho
+{
+    color: black;
+    width: 20px;
+}
+
+#msg
+{
+    margin: 0px 0px 15px 0px;
+}
+

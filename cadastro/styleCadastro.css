@@ -1,0 +1,80 @@
+.cadastro
+{
+    margin: 130px 15% 30% 15%;
+}
+
+.cadastro strong
+{
+    font-size: 45px;
+    
+}
+.cadastro .formulario{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+}
+
+#msg
+{
+    margin: -10px 0 15px -10px;
+}
+
+#senha
+{
+    margin-left: -10px;
+}
+
+.formulario .row
+{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+
+.formulario #enviar
+{
+    text-decoration: none;
+    color: white;
+    background: #628067;
+    padding: 5px 30px;
+    border-radius: 30px;
+    font-size: 17px;
+    width: 200px;
+    text-align: center;
+    margin: 0px 0px 30px -10px;
+}
+
+.formulario #enviar:hover
+{
+    transform: scale(1.05);
+    background: rgb(73, 97, 77);
+}
+
+.cadastro a
+{
+    text-decoration: none;
+    color:rgb(118, 159, 125);
+}
+
+.formulario p{
+    margin: 0px 0px 200px -10px;
+}
+
+
+
+@media (max-width: 767px) 
+{
+    .formulario .row
+    {
+        margin-bottom: 20px;
+    }
+
+    .cadastro strong
+    {
+        font-size: 43px;
+    }
+
+    
+}

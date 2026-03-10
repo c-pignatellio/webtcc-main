@@ -1,0 +1,541 @@
+.tituloInicio {
+    font-size: 70px;
+    font-weight: bold;
+    margin-left: -20px;
+    color: rgb(98, 87, 70);
+}
+
+.introducao {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 15%;
+    align-items: start;
+    margin: 100px 10% 15% 15%;
+
+}
+
+.introducao div {
+    margin: 0px;
+}
+
+.introducao div p {
+    line-height: 2.2em;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.introducao1 {
+    width: 50%;
+    max-width: 900px;
+    min-width: 450px;
+}
+
+.introducao2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding-top: 80px;
+}
+
+
+.introducao2 a {
+    text-decoration: none;
+    color: white;
+    background: #628067;
+    margin: 20px 0px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.introducao2 a:hover {
+    transform: scale(1.05);
+    background: rgb(73, 97, 77);
+}
+
+#creditos {
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-color: transparent;
+}
+
+.treJs {
+    display: grid;
+    justify-items: end;
+    width: 400px;
+    aspect-ratio: 4/4;
+}
+
+.treJs canvas {
+    position: relative;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+
+
+.plantas {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.plantas a{
+    color: rgb(75, 69, 66);
+    text-decoration: none;
+    }
+
+.tituloPlantas {
+    font-size: 55px;
+    font-weight: bold;
+    color: rgb(53, 46, 42);
+    margin-bottom: 20px;
+}
+
+.carrossel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.carrossel-inner {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    gap: 50px;
+    transition: transform 0.5s ease;
+}
+
+.car_planta {
+    background-color: #807668;
+    border-radius: 30px;
+    width: 320px;
+    height: 430px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 10px 10px 10px;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.6;
+
+}
+
+.car_planta img {
+    height: 410px;
+    width: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.car_planta.central {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.car_planta .texto {
+    margin: -15px;
+    padding: 0;
+    font-size: 1.3em;
+    text-align: center;
+    color: rgb(208, 208, 208);
+}
+
+.car_planta .tituloCar {
+    font-size: 1.7em;
+    font-weight: 500;
+}
+
+.txtCaro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 140px;
+
+}
+
+/*---------------------------------------------------*/
+
+.comprar {
+    margin: 400px 10% 5% 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
+
+
+}
+
+.comprar img {
+    width: 29vw;
+    height: calc(29vw * 1.4);
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.tituloComprar {
+    font-size: 65px;
+    font-weight: bold;
+    margin: 0px 0px 0px 0px;
+    text-align: end;
+}
+
+.comprar2 p {
+    line-height: 2.3em;
+    font-size: 25px;
+    text-align: end;
+    margin: 50px 0px 0px 0px;
+    padding-left: 10%
+}
+
+.comprar2 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.comprar2 a {
+    text-decoration: none;
+    color: white;
+    background: #628067;
+    margin: 20px 0px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    margin: 100px 0px 0px 0px;
+}
+
+
+
+.comprar2 a:hover {
+    transform: scale(1.05);
+    background: rgb(73, 97, 77);
+}
+
+
+
+
+
+@media (max-width: 1340px) and (min-width:1042px) {
+
+
+
+    /*.comprar{
+        width: 70%;
+        margin: 10% auto;
+
+    }*/
+
+    .comprar img {
+        height: 80vh;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 1090px) and (min-width: 695px) {
+    .tituloInicio {
+        font-size: 60px;
+    }
+
+    .introducao div p,
+    .comprar p {
+        font-size: 23px;
+        line-height: 1.9;
+    }
+
+    .introducao div p {
+        width: 600px;
+    }
+
+    .introducao {
+        gap: 20px;
+    }
+
+
+    .introducao2 {
+        margin: 0 20% 0 20% !important;
+        width: 60%;
+    }
+
+
+    .plantas {
+        margin: 10%;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .carrossel-inner{
+        width: 80%;
+    }
+    .car_planta {
+        width: 250px;
+        height: calc(250px * 1.4);
+
+    }
+
+    .car_planta .tituloCar {
+        font-size: 1.4em;
+    }
+
+    .car_planta .texto {
+        font-size: 1.1em;
+    }
+    .car_planta img{
+        height: 420px;
+        width: 190px;
+    }
+
+    .tituloPlantas {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: -100px;
+    }
+
+    #car_lados {
+        display: none;
+    }
+
+    .comprar {
+        flex-direction: column;
+        width: 70%;
+        margin: 10% 15% 0% 15%;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    .comprar img {
+        width: 100%;
+        height: 400px;
+
+    }
+
+
+    .comprar2 {
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .comprar2 p {
+        text-align: justify;
+        text-align-last: center;
+        padding: 0px;
+    }
+
+    .tituloComprar {
+        font-size: 60px;
+        text-align: center;
+    }
+
+
+}
+
+@media (max-width: 750px) and (min-width: 695px) {
+    .introducao div p {
+        width: 500px;
+    }
+}
+
+@media (max-width:695px) {
+    .tituloInicio {
+        font-size: 45px;
+        margin-left: 20px;
+        ;
+    }
+
+    .introducao {
+        width: 80%;
+        margin: 10%;
+        margin-top: 80px;
+        gap: 0%;
+    }
+
+    .introducao1 {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    .introducao1 p {
+        width: 100%;
+    }
+
+    .introducao div p,
+    .comprar p {
+        line-height: 1.8em;
+        font-size: 22px;
+        padding: 0 10px 0 10px;
+    }
+
+    .introducao2 {
+        margin: 0 25% 0 25% !important;
+        width: 50%;
+    }
+
+    .introducao2 a {
+        width: 180px;
+        text-align: center;
+        padding: 10px 0 10px 0;
+    }
+
+
+    .plantas {
+        margin: 10%;
+        width: 80%;
+    }
+
+    .car_planta {
+        width: 40vw;
+        min-width: 220px;
+        height: calc(50vw / 0.78);
+        min-height: 320px;
+        padding-top: 25px
+    }
+
+    .car_planta .tituloCar {
+        font-size: 1.3em;
+
+    }
+    .car_planta .texto {
+        font-size: 1em;
+        margin-top: 0px
+    }
+
+    .car_planta img {
+        height: 350px;
+        width: 180px;
+        
+
+    }
+
+    #item-1 .tituloCar {
+        margin-top: -13px;
+    }
+
+
+    .tituloComprar,
+    .tituloPlantas {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .tituloComprar {
+        margin-top: 20px;
+    }
+
+    .comprar {
+        flex-direction: column;
+        width: 80%;
+        margin: 15% 10% 0% 10%;
+        align-items: center;
+        justify-content: justify;
+    }
+
+    .comprar img {
+        width: 100%;
+        height: 400px;
+
+    }
+
+    .comprar2 {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .comprar2 p {
+        text-align: justify;
+        padding: 0px 20px 0px 20px;
+    }
+
+
+}
+
+@media (max-width: 450px) {
+
+    .introducao div p,
+    .comprar p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .comprar img
+    {
+        display: none
+    }
+
+    .comprar{
+        margin-top: -40px
+    }
+
+    .tituloComprar
+    {
+        font-size: 35px;
+    }
+    .tituloPlantas {
+        font-size: 35px;
+        margin-bottom:-170px;
+    }
+
+    .treJs {
+        width: 200px;
+        aspect-ratio: 4/4;
+    }
+    .treJs canvas{
+        border-radius: 0px;
+    }
+    .tituloPlantas
+    {
+        font-size: 2em;
+    }
+    .car_planta{
+        width: 40vw;
+        height: calc(70vw / 0.8);
+        min-width: 200px;
+        min-height: 0px;
+        padding: 0;
+    }
+
+    .car_planta img {
+        height: 220px;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .car_planta .tituloCar {
+        font-size: 1.2em;
+    
+    }
+
+    .car_planta .texto {
+        font-size: 1em;
+        margin-top: -10px;
+    }
+}

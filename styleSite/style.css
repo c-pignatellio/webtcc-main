@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Teachers", sans-serif;
+}
+
+body {
+    background-image: url(../imagens/fundo_enhanced.png);
+    background-repeat: repeat-y;
+    background-position: start;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container_ {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+img {
+    object-fit: cover;
+}
+
+/*-----------------------------------------------------------*/
+.cabecalho {
+    background-color: #628067;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 11px 15px 10px 15px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+.cabecalho .imgLogo {
+    max-width: 2.8em;
+    max-height: 2.8em;
+    object-fit: cover;
+}
+
+.cabecalho a,
+h2 {
+    margin: 0px 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.cabecalhoTexto {
+    font-size: 24px;
+    color: white;
+
+}
+
+.btn_icon_header {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.cabecalhoTexto1 {
+    display: block;
+}
+
+.cabecalhoTexto2 {
+    display: none;
+}
+
+.imgMenu {
+    width: 43px;
+    height: 43px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width: 451px) {
+    .navegacao_header {
+        position: absolute;
+        flex-direction: column !important;
+        top: 50px;
+        left: 0;
+        height: 100%;
+        width: 100vh;
+        padding: 1em;
+        padding-bottom: 11.5em;
+        animation-duration: 1s;
+        background-color: #628067;
+        align-items: flex-start;
+    }
+
+    .btn_icon_header {
+        display: block;
+    }
+
+    .cabecalhoTexto1 {
+        display: none;
+    }
+
+    .cabecalhoTexto2 {
+        display: block;
+    }
+}
+
+@keyframes showSidebar {
+    from {
+        margin-top: -100vw;
+    }
+
+    to {
+        margin-top: 0;
+    }
+}
+
+/*------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------*/
+.triangulo {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid #a4c4af;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    margin: 10px 45px;
+}
+
+#popup {
+    background-color: #a4c4af;
+    width: 160px;
+    font-size: 19px;
+    line-height: 2em;
+    padding: 15px 10px 15px 25px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    z-index: 9999;
+    font-weight: none;
+    position: fixed;
+    right: 0;
+    margin: 90px 45px;
+    box-shadow: -3px 3px 2px #00000077;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup a {
+    color: black;
+    text-decoration: none;
+}
+
+
+@media (max-width: 714px) {
+    .introducao2 {
+        width: 80%;
+    }
+}
+
+
+/*------------------------------------------------------------*/
+
+
+/*-------------SWAL------------------------------------*/
+.my-swal-popup {
+    font-family: "Teachers", sans-serif;
+    padding: 30px;
+    line-height: 40px;
+}
+
+.my-swal-title {
+    font-size: 28px;
+    ;
+}
+
+.my-swal-content {
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+.my-swal-confirm-button {
+    background-color: #628067 !important;
+}
+
+.my-swal-confirm-button:hover {
+    background-color: #4a6b4f !important;
+}
+
+.my-swal-deny-button {
+    background-color: #a4c4af;
+}
+
+.my-swal-deny-button:hover {
+    background-color: #8fbfa0;
+}
+
+/*---------------------------------------------------*/
+
+#rodape {
+    background-color: #a29787;
+    height: max-content;
+    width: 100vw;
+    margin: 200px 0px 0px 0px;
+    padding: 50px 5% 150px 5%;
+}
+
+#tituloRodape {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#rodape p {
+    line-height: 1.7em;
+    font-size: 25px;
+    text-align: justify;
+}
+
+.desenvolvedores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.nomeDes {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0
+}
+
+
+.powerBI {
+    background-color: rgb(99, 81, 72);
+    color: rgb(216, 208, 197);
+    padding: 30px 30px 30px 50px;
+    font-size: 22px;
+}
+
+.powerBI a {
+    color: rgb(189, 171, 147);
+}
+
+@media (max-width: 800px) and (min-width: 695px)
+{
+    .powerBI {
+        font-size: 20px;
+        line-height: 30px;;
+    }
+    #tituloRodape {
+        font-size: 40px;
+    }
+    #rodape p{
+        line-height: 1.5em;
+        font-size: 20px;
+    };
+}
+
+
+@media (max-width:695px) {
+    #rodape {
+        padding: 10%;
+    }
+
+    #tituloRodape {
+        font-size: 30px;
+    }
+
+    #rodape p {
+        line-height: 1.5em;
+        font-size: 15px;
+    }
+
+    .single img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .powerBI {
+        font-size: 17px;
+        line-height: 30px;;
+    }
+}
+
+
+/*---------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+input, textarea {
+    max-width: 500px;
+    height: 40px;
+    border-radius: 16px;
+    padding: 15px;
+    background-color: rgba(223, 242, 230, 0.6);
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 15px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #628067;
+    font-size: 15px;
+}
+
+input:focus, textarea:focus {
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: rgba(223, 242, 230, 1);
+    outline: none;
+}
+
+
+@media (max-width: 450px) {
+    #popup {
+        margin: 100px 45px;
+        right: auto;
+        left: 0;
+        border-radius: 20px;
+        border-top-left-radius: 0px;
+        top: 40px;
+        box-shadow: 3px 3px 2px #628067;
+    }
+
+    .triangulo {
+        right: auto;
+        left: 0;
+        top: 50px;
+        border-left: 0px #a4c4af;
+        border-right: 50px solid transparent;
+    }
+}
