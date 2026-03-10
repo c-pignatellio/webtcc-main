@@ -1,0 +1,211 @@
+/*--------------CONTATO----------------------------------------------------------------------*/
+
+body {
+    overflow-x: scroll;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 15% 0% 15%;
+    width: 70%;
+
+
+}
+
+.contato strong {
+    font-size: 50px;
+    color: rgb(57, 50, 43);
+
+}
+
+.contato p {
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.contato h3 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+}
+
+.formulario input, textarea{
+    width: 100%;
+    max-width: 400px;
+}
+
+#msg textarea {
+    height: 100px;
+    padding: 15px;
+    width: 150%;
+}
+
+#msg textarea::placeholder {
+    position: absolute;
+    top: 13px;
+}
+
+#enviar {
+    width: 250px;
+    background-color: rgba(77, 113, 76, 1);
+    margin-top: 25px;
+    color: white;
+    font-size: 17px;
+    padding: 0px;
+}
+
+#enviar:active {
+    background-color: rgb(65, 95, 64);
+}
+
+
+.formas {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    gap: 60px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+
+.contato .span {
+    width: 50%;
+}
+
+.contato .span h2 {
+    font-size: 25px;
+    color: black;
+
+}
+
+.contato .span h4 {
+    font-size: 18px;
+    margin: 5px 0px 20px 30px;
+    font-weight: normal;
+}
+
+@media (max-width: 1240px) {
+    .contato {
+        margin: 10% 15% 0% 15%;
+        width: 70%;
+
+    }
+}
+
+@media (max-width: 1040px) {
+    .contato {
+        margin: 15% 10% 0% 10%;
+        width: 80%;
+
+    }
+
+    .formas {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 796px) {
+    .contato {
+        margin-bottom: 0px;
+    }
+
+    .formas {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .formulario {
+        width: 100%
+    }
+
+    .contato .span {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .contato .span h2 {
+        font-size: 20px;
+        color: black;
+
+    }
+
+    .contato .span h4 {
+        font-size: 15px;
+        margin: 5px 0px 20px 20px;
+        font-weight: normal;
+    }
+
+    .contato strong {
+        font-size: 40px;
+        color: rgb(57, 50, 43);
+
+    }
+
+    .contato p {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .contato h3 {
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .span div {
+        flex-direction: column;
+    }
+
+    .contato {
+        margin-bottom: -100px;
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 428px) {
+    .contato {
+        margin-bottom: -100px;
+    }
+
+    .formulario input {
+        width: 100%;
+        max-width: 250px
+    }
+}
+
+@media (max-width: 347px) {
+    .contato {
+        margin-top: 100px;
+        margin-bottom: -100px;
+    }
+
+    .contato strong {
+        font-size: 35px;
+        color: rgb(57, 50, 43);
+
+    }
+
+    .contato p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .contato h3 {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+}

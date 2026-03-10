@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/styleSite/style.css">
+    <link rel="stylesheet" href="../../public/cadastro/styleCadastro.css">
+    <link rel="stylesheet" href="../../public/esqueceuASenha/styleSenha.css">
+    <link rel="icon" type="image/x-icon" href="../../public/imagens/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+
+
+    <div class="container_" id="container_" tabindex="0" onfocus="closeSidebar()">
+        <app-bar></app-bar>
+
+        <div class="cadastro">
+            <strong>Faça cadastro na EcoStuff</strong>
+            <p>Preencha com seus dados para fazer cadastro.</p>
+
+
+            <div class="container formulario">
+                <form id="formCadastro">
+                    <div class="row">
+                        <input id="nome" class="col-md-7 col-sm-12 item" type="text" placeholder="Nome Completo"
+                            required>
+                        
+                    </div>
+
+                    
+
+                    <div class="row">
+                        <input id="email" class="col-md-7 col-sm-12 item" type="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="row">
+                        <input id="cpf" class="col-md-4 item" type="text" placeholder="CPF"
+                            oninput="validarCPF(this); aplicarMascaraCPF(this)" maxlength="14" required>
+                    </div>
+
+
+                    <div class="row">
+                        <input id="celular" class="col-md-3 col-sm-12 item" type="text" placeholder="Celular"
+                            oninput="validarCelular(this); aplicarMascaraCelular(this)" maxlength="15" required>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div style="display: flex; flex-direction: row; gap:5px;"><input id="senha" class="col-md-3 col-sm-12 item" type="password" placeholder="Senha"
+                                required>
+                            <button style="top: 2px;" type="button" class="botao" id="botao"><img class="olho" id="olho"
+                                    src="../../public/imagens/aberto.png"></button>
+                        </div>
+                    </div>
+
+                    <div id="msg"></div>
+
+
+                    <input id="enviar" type="submit" value="Enviar">
+                </form>
+
+                <p>Já tem uma conta? <a href="../login/login.html">Clique aqui</a> para realizar login.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../../public/appBarRodape.js"></script>
+    <script type="module" src="../../public/styleSite/stylePop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../public/cadastro/cadastro.js"></script>
+    <script src="../../public/cadastro/aparenciaLoginCadastro.js"></script>
+    <script src="../../public/scriptPopUp.js"></script>
+    <script src="../../public/menuResponsivo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        // Função de máscara para CPF
+        function aplicarMascaraCPF(cpfField) {
+            cpfField.value = cpfField.value
+                .replace(/\D/g, "")            // Remove caracteres não numéricos
+                .replace(/(\d{3})(\d)/, "$1.$2")   // Coloca um ponto após os primeiros 3 dígitos
+                .replace(/(\d{3})(\d)/, "$1.$2")   // Coloca outro ponto após os próximos 3 dígitos
+                .replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca um traço antes dos últimos 2 dígitos
+        }
+
+        // Função de máscara para RG
+        function aplicarMascaraRG(rgField) {
+            rgField.value = rgField.value
+                .replace(/\D/g, "")           // Remove caracteres não numéricos
+                .replace(/(\d{2})(\d)/, "$1.$2")   // Coloca um ponto após os primeiros 2 dígitos
+                .replace(/(\d{3})(\d)/, "$1.$2")   // Coloca outro ponto após os próximos 3 dígitos
+                .replace(/(\d{3})(\d{1})$/, "$1-$2"); // Coloca um traço antes do último dígito
+        }
+
+        // Função de máscara para Telefone
+        function aplicarMascaraTelefone(telefoneField) {
+            telefoneField.value = telefoneField.value
+                .replace(/\D/g, "")                 // Remove caracteres não numéricos
+                .replace(/(\d{2})(\d)/, "($1) $2")  // Coloca parênteses em torno dos primeiros 2 dígitos
+                .replace(/(\d{4})(\d)/, "$1-$2");   // Coloca um traço após os 4 primeiros dígitos seguintes
+        }
+
+        // Função de máscara para Celular
+        function aplicarMascaraCelular(celularField) {
+            celularField.value = celularField.value
+                .replace(/\D/g, "")                  // Remove caracteres não numéricos
+                .replace(/(\d{2})(\d)/, "($1) $2")   // Coloca parênteses em torno dos primeiros 2 dígitos
+                .replace(/(\d{5})(\d)/, "$1-$2");    // Coloca um traço após os 5 primeiros dígitos seguintes
+        }
+
+
+        // Funções de validação (mantidas as mesmas)
+        function validarCPF(cpfField) {
+            const cpf = cpfField.value.replace(/\D/g, "");
+            if (!/^\d{11}$/.test(cpf)) {
+                cpfField.setCustomValidity("Por favor, insira um CPF válido.");
+            } else if (!validarDigitoVerificadorCPF(cpf)) {
+                cpfField.setCustomValidity("CPF inválido.");
+            } else {
+                cpfField.setCustomValidity("");
+            }
+        }
+
+        function validarDigitoVerificadorCPF(cpf) {
+            let soma = 0, resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(10, 11))) return false;
+            return true;
+        }
+
+        function validarRG(rgField) {
+            const rg = rgField.value.replace(/\D/g, "");
+            if (!/^\d{7,9}$/.test(rg)) {
+                rgField.setCustomValidity("Por favor, insira um RG válido.");
+            } else {
+                rgField.setCustomValidity("");
+            }
+        }
+
+        function validarTelefone(telefoneField) {
+            const telefone = telefoneField.value.replace(/\D/g, "");
+            if (telefone === "") {
+                telefoneField.setCustomValidity("");
+            } else if (!/^\d{10}$/.test(telefone)) {
+                telefoneField.setCustomValidity("Por favor, insira um número de telefone válido.");
+            } else {
+                telefoneField.setCustomValidity("");
+            }
+        }
+
+        function validarCelular(celularField) {
+            const celular = celularField.value.replace(/\D/g, "");
+            if (!/^\d{11}$/.test(celular) || celular[2] !== '9') {
+                celularField.setCustomValidity("Por favor, insira um número de celular válido.");
+            } else {
+                celularField.setCustomValidity("");
+            }
+        }
+    </script>
+</body>
+
+</html>

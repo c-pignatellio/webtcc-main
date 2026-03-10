@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        
+</body>
+<script type="module">
+        import{Usuario} from "../public/usuario.js"
+        import {adicionarUsuario,getEmail} from "../public/estadoLogin/estadoLogin.js";
+        var u = new Usuario("cecilia","cecilia@gmail.com","19999100212","47276333884","585014589","cecilia123")
+        var u2 = JSON.stringify(u)
+        adicionarUsuario(u2);
+        u = JSON.parse(getEmail());
+        const instanciaRecuperada = new Usuario();
+        Object.assign(instanciaRecuperada, u);
+        
+
+        console.log(instanciaRecuperada.email);
+
+</script>
+</html>

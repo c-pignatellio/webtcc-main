@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Dados</title>
+    <link rel="stylesheet" href="../../public/styleSite/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="icon" type="image/x-icon" href="../../public/imagens/favicon.png">
+    <style>
+        .background-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            border: none;
+        }
+
+        .overlay-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popupINF {
+            background: #a4c4af;
+            border-radius: 100px;
+            padding: 40px 110px;
+            box-shadow: -3px 3px 2px #628067;
+            width: 600px;
+            max-width: max-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popupINF div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 40% 20px auto;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .popupINF div input {
+            width: 70%;
+            height: 38px;
+            border-radius: 16px;
+            padding: 15px ;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            border-bottom: 2px solid #000;
+            font-size: 15px;
+        }
+
+        form button {
+            text-decoration: none;
+            color: white;
+            background: #628067;
+            padding:10px;
+            border-radius: 30px;
+            font-size: 15px;
+            width: 170px;
+            text-align: center;
+            margin-left: 30%;
+            margin-top: 20px;
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -20px;
+            right: -5px;
+            background: none;
+            border: none;
+            font-size: 3rem;
+            cursor: pointer;
+            color: rgb(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 8px #000000;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+        }
+
+        @media(max-width: 661px) {
+            .popupINF {
+                border-radius: 50px;
+                padding: 20px 55px;
+            }
+
+            .popupINF div {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .popupINF div label {
+                margin-left: -320px;
+                margin-bottom: 5px;
+            }
+
+            .popupINF div input {
+                height: 30px;
+                width: 90%;
+                padding: 12px;
+            }
+
+            .close-btn {
+                right: 110px;
+                top: 0px;
+            }
+
+            #cp {
+                margin-left: -330px;
+            }
+            #cl {
+                margin-left: -305px;
+            }
+            #r {
+                margin-left: -335px;
+            }
+        }
+
+        @media(max-width: 501px) {
+            .popupINF {
+                border-radius: 50px;
+                padding: 20px 55px;
+            }
+
+            .popupINF div {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .popupINF div label {
+                margin: 0 0 5px -235px;
+                font-size: 0.8em;
+            }
+
+            #cp {
+                margin-left: -245px;
+            }
+            #cl {
+                margin-left: -225px;
+            }
+            #r {
+                margin-left: -250px;
+            }
+
+            .popupINF div input {
+                height: 25px;
+                width: 270px;
+                font-size: 0.8em;
+                padding: 10px
+            }
+        }
+
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <iframe src="minhaConta.html" class="background-frame"></iframe>
+
+    <div id="overlay" class="overlay-popup">
+        <div class="popupINF">
+            <button id="closePopup" class="close-btn" onclick="closePopup()">×</button>
+            <h2>Editar meus dados</h2>
+            <form id="formEdicao">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="seuemail@gmail.com" readonly>
+                </div>
+                <div>
+                    <label for="cpf" id="cp">CPF:</label>
+                    <input type="text" id="cpf" placeholder="000.000.000-00"
+                        oninput="validarCPF(this); aplicarMascaraCPF(this)" maxlength="14" required>
+                </div>
+                <div>
+                    <label for="celular" id="cl">Celular:</label>
+                    <input type="text" id="celular" placeholder="(00) 00000-0000"
+                        oninput="validarCelular(this); aplicarMascaraCelular(this)" maxlength="15" required>
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="../../public/minhaConta/editarDados.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function closePopup() {
+            window.location.href = "minhaConta.html";
+        }
+
+        
+    </script>
+    <script type="module">
+    import { getLoggedIn } from '../../public/estadologin/estadoLogin.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      if (!getLoggedIn()) {
+        window.location.href = "../login/login.html"
+      }
+
+    });
+  </script>
+    <script>
+        function aplicarMascaraCPF(cpfField) {
+            cpfField.value = cpfField.value
+                .replace(/\D/g, "")
+                .replace(/(\d{3})(\d)/, "$1.$2")
+                .replace(/(\d{3})(\d)/, "$1.$2")
+                .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+        }
+
+        function aplicarMascaraRG(rgField) {
+            rgField.value = rgField.value
+                .replace(/\D/g, "")
+                .replace(/(\d{2})(\d)/, "$1.$2")
+                .replace(/(\d{3})(\d)/, "$1.$2")
+                .replace(/(\d{3})(\d{1})$/, "$1-$2");
+        }
+
+        function aplicarMascaraTelefone(telefoneField) {
+            telefoneField.value = telefoneField.value
+                .replace(/\D/g, "")
+                .replace(/(\d{2})(\d)/, "($1) $2")
+                .replace(/(\d{4})(\d)/, "$1-$2");
+        }
+
+        function aplicarMascaraCelular(celularField) {
+            celularField.value = celularField.value
+                .replace(/\D/g, "")
+                .replace(/(\d{2})(\d)/, "($1) $2")
+                .replace(/(\d{5})(\d)/, "$1-$2");
+        }
+
+        function validarCPF(cpfField) {
+            const cpf = cpfField.value.replace(/\D/g, "");
+            if (!/^\d{11}$/.test(cpf)) {
+                cpfField.setCustomValidity("Por favor, insira um CPF válido.");
+            } else if (!validarDigitoVerificadorCPF(cpf)) {
+                cpfField.setCustomValidity("CPF inválido.");
+            } else {
+                cpfField.setCustomValidity("");
+            }
+        }
+
+        function validarDigitoVerificadorCPF(cpf) {
+            let soma = 0, resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(10, 11))) return false;
+            return true;
+        }
+
+        function validarRG(rgField) {
+            const rg = rgField.value.replace(/\D/g, "");
+            if (!/^\d{7,9}$/.test(rg)) {
+                rgField.setCustomValidity("Por favor, insira um RG válido.");
+            } else {
+                rgField.setCustomValidity("");
+            }
+        }
+
+        function validarTelefone(telefoneField) {
+            const telefone = telefoneField.value.replace(/\D/g, "");
+            if (telefone === "") {
+                telefoneField.setCustomValidity("");
+            } else if (!/^\d{10}$/.test(telefone)) {
+                telefoneField.setCustomValidity("Por favor, insira um número de telefone válido.");
+            } else {
+                telefoneField.setCustomValidity("");
+            }
+        }
+
+        function validarCelular(celularField) {
+            const celular = celularField.value.replace(/\D/g, "");
+            if (!/^\d{11}$/.test(celular) || celular[2] !== '9') {
+                celularField.setCustomValidity("Por favor, insira um número de celular válido.");
+            } else {
+                celularField.setCustomValidity("");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+.power {
+    margin: 150px 10% 10% 100px;
+
+}
+
+
+.tituloPower {
+    font-size: 55px;
+    font-weight: bold;
+    color: rgb(98, 87, 70);
+}
+
+.power p {
+    width: 70%;
+}
+
+.powerbi {
+    position: relative;
+    width: 100%;
+    padding-bottom: 62%; 
+    height: 0;
+    overflow: hidden;
+}
+
+.powerbi iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+@media (max-width: 950px) {
+    .power {
+        margin-top: 100px;
+        margin-left: 8%;
+    }
+
+    .tituloPower {
+        font-size: 50px;
+        ;
+    }
+}
+
+@media (max-width: 600px) {
+    .power {
+        margin: 80px 10% 8% 10%;
+    }
+
+    .tituloPower {
+        font-size: 40px;
+        ;
+    }
+
+    .power p {
+        width: 100%;
+    }
+}

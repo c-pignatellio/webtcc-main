@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Dados</title>
+    <link rel="stylesheet" href="../../public/styleSite/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="icon" type="image/x-icon" href="../../public/imagens/favicon.png">
+    <style>
+        .background-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            border: none;
+        }
+
+        .overlay-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popupINF {
+            background: #a4c4af;
+            border-radius: 100px;
+            padding: 40px 110px;
+            box-shadow: -3px 3px 2px #628067;
+            width: 600px;
+            max-width: max-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popupINF div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 40% 20px auto;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .popupINF div input {
+            width: 70%;
+            height: 38px;
+            border-radius: 16px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            border-bottom: 2px solid #000;
+            font-size: 15px;
+        }
+
+        form button {
+            text-decoration: none;
+            color: white;
+            background: #628067;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 15px;
+            width: 170px;
+            text-align: center;
+            margin-left: 30%;
+            margin-top: 20px;
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -20px;
+            right: -5px;
+            background: none;
+            border: none;
+            font-size: 3rem;
+            cursor: pointer;
+            color: rgb(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 8px #000000;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+        }
+
+        @media(max-width: 661px) {
+            .popupINF {
+                border-radius: 50px;
+                padding: 20px 55px;
+            }
+
+            .popupINF div {
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: -5px;
+            }
+
+            .popupINF div label {
+                margin-left: -330px;
+                margin-bottom: 5px;
+                font-size: 14px;
+            }
+
+            .popupINF div input {
+                height: 28px;
+                width: 90%;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .close-btn {
+                right: 110px;
+                top: 0px;
+            }
+
+            #br {
+                margin-left: -315px;
+            }
+
+            #ba {
+                margin-left: -320px;
+            }
+
+            #nu {
+                margin-left: -310px;
+            }
+
+            #co {
+                margin-left: -273px;
+            }
+        }
+
+        @media(max-width: 501px) {
+            .popupINF {
+                border-radius: 50px;
+                padding: 20px 55px;
+            }
+
+            .popupINF div {
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 0
+            }
+
+            .popupINF div label {
+                margin: 0 0 5px -240px;
+                font-size: 0.8em;
+            }
+
+            #br {
+                margin-left: -225px;
+            }
+
+            #ba {
+                margin-left: -230px;
+            }
+
+            #nu {
+                margin-left: -220px;
+            }
+
+            #co {
+                margin-left: -185px;
+            }
+
+            .popupINF div input {
+                height: 25px;
+                width: 270px;
+                font-size: 0.8em;
+                padding: 10px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="minhaConta.html" class="background-frame"></iframe>
+
+    <div id="overlay" class="overlay-popup">
+        <div class="popupINF">
+            <button id="closePopup" class="close-btn" onclick="closePopup()">×</button>
+            <h2>Editar meus dados</h2>
+            <form id="formEdicao">
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                </div>
+                <div>
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" required>
+                </div>
+                <div>
+                    <label for="bairro" id="ba">Bairro:</label>
+                    <input type="text" id="bairro" required>
+                </div>
+                <div>
+                    <label for="cidade" id="br">Cidade:</label>
+                    <input type="text" id="cidade" required>
+                </div>
+                <div>
+                    <label for="estado" id="br">Estado:</label>
+                    <input type="text" id="estado" required>
+                </div>
+                <div>
+                    <label for="numero" id="nu">Número:</label>
+                    <input type="text" id="numero" required>
+                </div>
+                <div>
+                    <label for="complemento" id="co">Complemento:</label>
+                    <input type="text" id="complemento" placeholder="(opcional)">
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <span id="btnText">Salvar</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+        import { getLoggedIn } from '../../public/estadologin/estadoLogin.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!getLoggedIn()) {
+                window.location.href = "../login/login.html"
+            }
+
+        });
+    </script>
+
+    <script>
+        const cepInput = document.getElementById('cep');
+        const ruaInput = document.getElementById('rua');
+        const bairroInput = document.getElementById('bairro');
+        const cidadeInput = document.getElementById('cidade');
+        const estadoInput = document.getElementById('estado');
+        const numeroInput = document.getElementById('numero');
+        const formEdicao = document.getElementById('formEdicao');
+
+        let cepValido = false;
+
+        function atualizarEstadoCampos() {
+            const cepVazio = cepInput.value.trim() === '';
+
+            if (!cepVazio) {
+                ruaInput.disabled = true;
+                bairroInput.disabled = true;
+                cidadeInput.disabled = true;
+                estadoInput.disabled = true;
+            } else {
+                ruaInput.disabled = false;
+                bairroInput.disabled = false;
+                cidadeInput.disabled = false;
+                estadoInput.disabled = false;
+            }
+        }
+
+        cepInput.addEventListener('input', function () {
+            let value = cepInput.value.replace(/\D/g, '');
+
+            if (value.length > 5) {
+                value = value.substring(0, 5) + '-' + value.substring(5, 8);
+            }
+
+            cepInput.value = value;
+            const cleanCep = value.replace('-', '');
+            atualizarEstadoCampos();
+
+            if (cleanCep.length === 8) {
+                buscarEndereco(cleanCep);
+            } else {
+                resetCampos();
+            }
+        });
+
+        async function buscarEndereco(cep) {
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json();
+
+                if (data.erro) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'CEP não encontrado.',
+                        confirmButtonText: "Ok",
+                        customClass: {
+                            popup: 'my-swal-popup',
+                            title: 'my-swal-title',
+                            content: 'my-swal-content',
+                            confirmButton: 'my-swal-confirm-button',
+                        }
+                    }
+                    ).then((result) => {
+
+                        if (result.isConfirmed) {
+                            window.location.href = '../../view/minhaConta/endereco.html';
+                        }
+
+                    });
+                    resetCampos();
+                    cepValido = false;
+                } else {
+                    ruaInput.value = data.logradouro || '';
+                    bairroInput.value = data.bairro || '';
+                    cidadeInput.value = data.localidade || '';
+                    estadoInput.value = data.uf || '';
+                    cepValido = true;
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Erro ao procurar CEP. Tente novamente mais tarde.',
+                    confirmButtonText: "Ok",
+                    customClass: {
+                        popup: 'my-swal-popup',
+                        title: 'my-swal-title',
+                        content: 'my-swal-content',
+                        confirmButton: 'my-swal-confirm-button',
+                    }
+                }
+                ).then((result) => {
+
+                    if (result.isConfirmed) {
+                        window.location.href = '../../view/minhaConta/endereco.html';
+                    }
+
+                });
+                resetCampos();
+                cepValido = false;
+            }
+        }
+
+        function resetCampos() {
+            ruaInput.value = '';
+            bairroInput.value = '';
+            cidadeInput.value = '';
+            estadoInput.value = '';
+            cepValido = false;
+        }
+
+        formEdicao.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const cep = cepInput.value.replace('-', '');
+            const camposObrigatorios = [
+                ruaInput.value.trim(),
+                bairroInput.value.trim(),
+                cidadeInput.value.trim(),
+                estadoInput.value.trim()
+            ];
+
+            if (cep.length !== 8 || !cepValido || camposObrigatorios.some(campo => campo === '')) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Por favor, preencha todos os campos obrigatórios corretamente.',
+                    confirmButtonText: "Ok",
+                    customClass: {
+                        popup: 'my-swal-popup',
+                        title: 'my-swal-title',
+                        content: 'my-swal-content',
+                        confirmButton: 'my-swal-confirm-button',
+                    }
+                }
+                ).then((result) => {
+
+                    if (result.isConfirmed) {
+                        window.location.href = '../../view/minhaConta/endereco.html';
+                    }
+
+                });
+                return;
+            }
+        });
+
+        function closePopup() {
+            window.location.href = "minhaConta.html";
+        }
+    </script>
+    <script type="module" src="../../public/minhaConta/endereco.js"></script>
+</body>
+
+</html>

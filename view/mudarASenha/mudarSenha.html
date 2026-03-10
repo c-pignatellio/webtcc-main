@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/styleSite/style.css">
+    <link rel="stylesheet" href="../../public/esqueceuASenha/styleSenha.css">
+    <link rel="icon" type="image/x-icon" href="../../public/imagens/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Esqueci minha senha</title>
+    <style>
+        .loader {
+            border: 12px solid #dce5dc;
+            /* Light grey */
+            border-top: 12px solid #88ad86;
+            /* Blue */
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite;
+            margin-bottom: 30px;
+            margin-top: -20px;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container_" id="container_" tabindex="0" onfocus="closeSidebar()">
+        <app-bar></app-bar>
+        <div class="esqueceu">
+            <strong>Alterar sua senha</strong>
+            <p>Preencha com seu e-mail, e um código de verificação será enviado.</p>
+
+            <form id="formEmail">
+                <input id="email" type="email" placeholder="Seu email" required><br>
+                <div id="msg"></div><br>
+                <div class="loader"></div>
+                <input type="submit" value="Enviar">
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+    <script src="../../public/appBarRodape.js"></script>
+    <script type="module" src="../../public/recuperarSenha/recuperarSenha.js"></script>
+
+    <script type="module" src="../../public/styleSite/stylePop.js"></script>
+    <script src="../../public/scriptPopUp.js"></script>
+    <script src="../../public/appBarRodape.js"></script>
+    <script src="../../public/menuResponsivo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

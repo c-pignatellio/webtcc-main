@@ -1,0 +1,9 @@
+gnt precisa meter um 
+npx vite 
+no terminal
+se n funcionar
+mete um 
+npm install vite
+npm install three
+se nada funcionar provavel que nao tenha nodejs instalado na maquina
+https://threejs.org/manual/#en/installation

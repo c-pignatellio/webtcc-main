@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Teachers", sans-serif;
+}
+
+body{
+    background-image: url(imagens/fundo_enhanced.png);
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container_{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+img
+{
+    object-fit: cover;
+}
+
+/*-----------------------------------------------------------*/
+
+.cabecalho{
+    background-color: #628067;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 11px 15px 10px 15px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.cabecalho img{
+    max-width: 2.8em;
+    max-height: 2.8em;
+}
+
+.cabecalho a, h2{
+    margin: 0px 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.cabecalhoTexto
+{
+    font-size: 24px;
+    color: white;
+
+}
+
+.btn_icon_header{
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalhoTexto1{
+    display: block;
+}
+
+.cabecalhoTexto2{
+    display: none;
+}
+
+
+@media screen and (max-width: 450px) {
+    .navegacao_header{
+        position: absolute;
+        flex-direction: column !important;
+        top: 50px;
+        left: 0;
+        height: 100%;
+        width: 100vh;
+        padding: 1em;
+        padding-bottom: 11.5em;
+        animation-duration: 1s;
+        background-color: #628067;
+        align-items: flex-start;
+    }
+    .btn_icon_header{
+        display: block;
+    }
+    .cabecalhoTexto1{
+        display: none;
+    }
+    .cabecalhoTexto2{
+        display: block;
+    }
+}
+@keyframes showSidebar {
+    from {margin-top: -100vw;}
+    to {margin-top: 0;}
+}
+/*------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------*/
+.triangulo
+{
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-top: 50px solid transparent; 
+    border-bottom: 50px solid #a4c4af; 
+    position:fixed;
+    z-index: 1;
+    right: 0;
+    margin: 10px 45px;
+}
+
+#popup
+{
+    background-color: #a4c4af;
+    width: 160px;
+    font-size: 19px;
+    line-height: 2em;
+    padding: 15px 10px 15px 25px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+    font-weight: none;
+    position: fixed;
+    right: 0;
+    margin: 90px 45px;
+    box-shadow: -3px 3px 2px #628067;
+}
+
+.hidden
+{
+    display: none;
+}
+
+#popup a
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+@media (max-width: 714px)
+
+{
+    .introducao2
+    {
+        width: 80%;
+    }
+}
+
+
+/*------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------*/
+
+#rodape{
+    background-color: #a29787;
+    height: max-content;
+    width: 100%;
+    margin:200px 0px 0px 0px;
+    padding: 50px 5% 150px 5%;
+}
+
+#tituloRodape{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#rodape p{
+    line-height: 1.7em;
+    font-size:  25px;
+    text-align: justify;
+}
+
+.desenvolvedores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.single
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom:10px;
+}
+
+.nomeDes
+{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0
+}
+
+
+/*---------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+input
+{
+    width: 500px;
+    height: 40px;
+    border-radius: 16px;
+    padding: 15px;
+    background-color: rgba(223, 242, 230, 0.6);
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 15px;
+}
+
+input::placeholder
+{
+    color:#628067;
+    font-size: 15px;
+}
+
+input:focus
+{
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: rgba(223, 242, 230, 1);
+    outline: none;
+}

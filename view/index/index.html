@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../public/styleSite/style.css">
+  <link rel="stylesheet" href="../../public/index/styleIndex.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=info" />
+  <link rel="icon" type="image/x-icon" href="../../public/imagens/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Página Inicial</title>
+</head>
+
+<body>
+
+
+  <div class="container_" id="container_" tabindex="0" onfocus="closeSidebar()">
+    <app-bar id=menu></app-bar>
+    <br>
+    <div class="introducao">
+      <div class="introducao1">
+        <div class="tituloInicio">EcoStuff</div>
+        <p>Desenvolvida por alunos em um trabalho de conclusão de curso,
+          a EcoStuff é uma estufa integrada a um minhocário, que com um
+          sistema inteligente, cuida de sua planta totalmente automatizada.
+          Necessita de zero cuidado, e utiliza os nutrientes do minhocário
+          para nutrir a planta, visando o futuro, automação e sustentabilidade.<br>
+          Para mais informações, clique no botão ao lado.
+        </p>
+      </div>
+      <div class="introducao2">
+        
+        <div class="treJs">
+          <button id = "creditos" onclick="creditos()"><span class="material-symbols-outlined">
+              info
+            </span></button>
+        </div>
+
+        <a href="../compre/compre.html">Compre já!</a>
+      </div>
+    </div>
+    <div class="plantas">
+      <div class="tituloPlantas"> <a href="../catalogo/catalogo.html">Algumas de nossas plantas ˃</a></div>
+      <div class="carrossel">
+        <div class="carrossel-inner" id ="carrossel">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="comprar">
+      <img src="../../public/imagens/estufa.jpg">
+      <div class="comprar2">
+        <div class="tituloComprar">Tenha uma EcoStuff</div>
+        <p>
+          Você pode ter uma EcoStuff! <br>
+          Ao adquirir-lá, você está ajudando a espalhar
+          uma proposta mais sustentável para o cultivo
+          automatizado individual. Destacamos que a EcoStuff
+          está ainda sendo fabricada sob demanda, então sua
+          compra é ainda mais exclusiva!
+          <br>Para mais informações, clique no botão abaixo.
+
+        </p>
+
+        <a href="../compre/compre.html">Compre já!</a>
+      </div>
+    </div>
+
+    <roda-pe></roda-pe>
+  </div>
+
+  <script type="module" src="../../public/index/index.js"></script>
+  <script src="../../public/appBarRodape.js"></script>
+  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="../../public/styleSite/stylePop.js"></script>
+  <script src="../../public/scriptPopUp.js"></script>
+  <script src="../../public/menuResponsivo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script>
+    let items = Array.from(document.querySelectorAll('.car_planta'));
+    let currentIndex = 0;
+
+    function creditos()
+    {
+      Swal.fire(
+      {
+        title:"Modelos 3D utilizados",
+        html: `
+        <b>Plantas:</b><br>
+        <a target="_blank" href='https://sketchfab.com/3d-models/plant-lowpoly-54e3451086814463b4d7f33565793dde'>Tomateira</a> <br>
+        <a target="_blank" href='https://sketchfab.com/3d-models/stylised-plants-6b0940d16aa548d0891c9d29b19e7bbd'>Cogumelos</a><br>
+        <b>Vaso:</b> <br>
+        <a target="_blank" href='https://sketchfab.com/3d-models/stylized-interior-plants-bb28ae7d1ddb4601ae7e4350e2ae0bed
+'>Vasos</a>
+        `,
+        confirmButtonColor: "#628067"
+      });
+    }
+
+    /*function updateCarrossel() {
+      console.log("Inicializando carrossel...");
+      const items = Array.from(document.querySelectorAll(".car_planta"));
+
+      if (items.length === 0) {
+        console.warn("Nenhum item encontrado no carrossel");
+        return;
+      }
+
+      console.log(`Encontrados ${items.length} itens no carrossel`);
+      items.forEach((item) => {
+        item.classList.remove('central');
+        item.style.transform = '';
+        item.style.opacity = '0';
+      });
+
+      const prevIndex = (currentIndex - 1 + items.length) % items.length;
+      const nextIndex = (currentIndex + 1) % items.length;
+
+      // Lógica para telas menores ou maiores que 1042 pixels
+      if (window.innerWidth < 1042) {
+        items[prevIndex].style.transform = 'translateX(-200px) scale(0.8)';
+        items[nextIndex].style.transform = 'translateX(200px) scale(0.8)';
+      } else {
+        items[prevIndex].style.transform = 'translateX(-400px) scale(0.8)';
+        items[nextIndex].style.transform = 'translateX(400px) scale(0.8)';
+      }
+
+      if (window.innerWidth < 700) {
+        items[prevIndex].style.transform = 'translateX(-50px) scale(0.8)';
+        items[nextIndex].style.transform = 'translateX(50px) scale(0.8)';
+      }
+
+      //items[currentIndex].style.transform = 'translateX(0px) scale(1.2)';
+      items[currentIndex].style.opacity = '1';
+      items[currentIndex].classList.add('central');
+
+      // Definindo a opacidade dos itens anterior e seguinte
+      items[prevIndex].style.opacity = (window.innerWidth < 1042) ? '0' : '1';
+      items[nextIndex].style.opacity = (window.innerWidth < 1042) ? '0' : '1';
+    }
+
+    function autoRotate() {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarrossel();
+    }
+
+    let rotateInterval = setInterval(autoRotate, 3000);
+
+    window.addEventListener('resize', updateCarrossel);
+
+    updateCarrossel();*/
+  </script>
+
+
+</body>
+
+</html>
