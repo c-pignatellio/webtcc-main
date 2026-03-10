@@ -6,7 +6,7 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
-   "scripts": {
+  "scripts": {
     "dev": "npx vite",
     "build": "npx vite build",
     "preview": "npx vite preview",
