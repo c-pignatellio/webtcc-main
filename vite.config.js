@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' 
-    ? '/your-repo-name/'  // Replace with your actual repo name
+    ? '/webtcc-main/'  // Replace with your actual repo name
     : '/',
   build: {
     rollupOptions: {
